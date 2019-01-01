@@ -41,15 +41,19 @@ pickSingleWithCamera= () => {
   render() {
 
     return (
+      //<View style={styles.rectangle} />
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to the Menu Scene!</Text>
-        
-        {this.state.image ? this.renderImage(this.state.image) : null}
+        <View style={styles.rectangle} >
 
         <TouchableOpacity onPress={this.pickSingleWithCamera}>
         <Image source={require('./assets/plus.png')} style={styles.add} 
         />
+        
+        {this.state.image ? this.renderImage(this.state.image) : null}
+
+        
         </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -58,22 +62,19 @@ pickSingleWithCamera= () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  rectangle: {
+    marginTop: 90,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 335,
+    height: 335,
+    backgroundColor: '#D6EDF3',
+    borderRadius: 30,
   },
   add:{
-    marginTop: 600,
     width: 80,
     height: 80,
   }
